@@ -91,11 +91,15 @@
             for (i = 0; i < $('#taginputs').val().split(',').length; i++){                
                 TAGS.add($('#taginputs').val().split(',')[i]);
             }
+        } else {
+            TAGS.add($('#taginputs').val());
         }
+
         $('#output').html('');
         for (let item of TAGS){
+            if (item != ''){                
             $('#output').append(`<span class='tag'>${item}</span>`);
-            console.log(item);
+            }            
         }
     })
 </script>
